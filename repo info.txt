@@ -13,8 +13,8 @@ git push -u origin main
 
 
 git remote add origin https://github.com/198118131/vardhan.git
-git branch -M main
-git push -u origin main
+git branch -M master
+git push -u origin master
 
 
 ################################SSH wala

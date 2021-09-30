@@ -7,9 +7,10 @@ var router = express.Router();
 router.use(bodyparser.json());
 /* GET home page. */
 router.route('/')
-.get((req,res)=>{
+.get((req,res,next)=>{
     res.statusCode=200;
     res.render('contact');
+    // next();
 })
 .post((req,res)=>{
     Contacts.create(req.body)
@@ -19,7 +20,6 @@ router.route('/')
         res.setHeader("content-Type", 'application/json');
         res.json(contact);
         
-    },(err)=>next(err))
-    .catch((err)=>next(err));
+    });
 });
 module.exports = router;
